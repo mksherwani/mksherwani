@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Moiz Khan Sherwani, Ph.D. - AI Vision & Medical Imaging</title>
+
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- AOS (Animate on Scroll) Library CSS for nice animations -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <!-- Custom styles -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    header.hero-bg {
+      background: url('images/1.jpg') center center/cover no-repeat;
+      color: white;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    }
+    .card-clickable {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
@@ -31,8 +42,8 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="bg-primary text-white text-center py-5" style="margin-top: 56px;">
+  <!-- Hero Section with Background Image -->
+  <header class="hero-bg text-white text-center py-5" style="margin-top: 56px;">
     <div class="container" data-aos="fade-up">
       <h1 class="display-4">AI Vision, Medical Imaging & Multi-omics</h1>
       <p class="lead">Data Scientist | Machine Learning Scientist | Computational Biologist</p>
@@ -44,9 +55,8 @@
     <div class="container" data-aos="fade-up">
       <h2 class="text-center mb-4">Research</h2>
       <div class="row">
-        <!-- Use Bootstrap cards to summarize your research areas -->
         <div class="col-md-4">
-          <div class="card mb-4">
+          <div class="card mb-4 card-clickable" onclick="window.open('ai-vision.html', '_blank')">
             <div class="card-body">
               <h5 class="card-title">AI Vision</h5>
               <p class="card-text">Advanced deep learning techniques for image recognition and interpretation.</p>
@@ -54,7 +64,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card mb-4">
+          <div class="card mb-4 card-clickable" onclick="window.open('medical-imaging.html', '_blank')">
             <div class="card-body">
               <h5 class="card-title">Medical Imaging</h5>
               <p class="card-text">Integrative approaches for precise diagnosis using state-of-the-art imaging technologies.</p>
@@ -62,7 +72,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card mb-4">
+          <div class="card mb-4 card-clickable" onclick="window.open('multiomics-gnn.html', '_blank')">
             <div class="card-body">
               <h5 class="card-title">Multi-omics & GNN</h5>
               <p class="card-text">Leveraging multi-omics data with graph neural networks to uncover new biological insights.</p>
@@ -73,16 +83,14 @@
     </div>
   </section>
 
-  <!-- Interactive Projects Section -->
+  <!-- Projects Section -->
   <section id="projects" class="bg-light py-5">
     <div class="container" data-aos="fade-up">
       <h2 class="text-center mb-4">Featured Projects</h2>
       <div class="row">
-        <!-- Example: Embed an interactive chart using Chart.js -->
         <div class="col-md-6">
           <canvas id="projectChart"></canvas>
         </div>
-        <!-- Showcase a demo project with a video or GIF -->
         <div class="col-md-6 d-flex align-items-center">
           <div>
             <h4>Medical Imaging Analysis Demo</h4>
@@ -98,8 +106,13 @@
   <section id="publications" class="py-5">
     <div class="container" data-aos="fade-up">
       <h2 class="text-center mb-4">Publications</h2>
-      <p class="text-center">A selection of my research publications and articles.</p>
-      <!-- List your publications here -->
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a href="https://doi.org/10.3389/fradi.2024.1385742" target="_blank">[2024] A systematic literature review: deep learning techniques for synthetic medical image generation and their applications in radiotherapy</a></li>
+        <li class="list-group-item"><a href="https://doi.org/your-doi-2" target="_blank">[2023] Deep Learning in Medical Imaging: A GAN-based Approach</a></li>
+        <li class="list-group-item"><a href="https://doi.org/your-doi-3" target="_blank">[2022] COVID Lesion Segmentation Using Unsupervised Learning</a></li>
+        <li class="list-group-item"><a href="https://doi.org/your-doi-4" target="_blank">[2021] Graph Neural Networks in Multi-omics Data Analysis</a></li>
+        <li class="list-group-item"><a href="https://doi.org/your-doi-5" target="_blank">[2020] Synthetic CT Generation from MRI: A DL Perspective</a></li>
+      </ul>
     </div>
   </section>
 
@@ -112,11 +125,11 @@
           <form>
             <div class="mb-3">
               <label for="name" class="form-label">Name</label>
-              <input type="text" id="name" class="form-control" placeholder="Your name">
+              <input type="text" id="name" class="form-control" placeholder="Your name" />
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <input type="email" id="email" class="form-control" placeholder="Your email">
+              <input type="email" id="email" class="form-control" placeholder="Your email" />
             </div>
             <div class="mb-3">
               <label for="message" class="form-label">Message</label>
@@ -132,18 +145,16 @@
   <!-- Footer -->
   <footer class="bg-secondary text-white text-center py-3">
     <div class="container">
-      <p>&copy; 2025 Dr. Your Name. All rights reserved.</p>
+      <p>&copy; 2025 Moiz Khan Sherwani, Ph.D. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Bootstrap JS Bundle -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- AOS Animation Library JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    AOS.init(); // Initialize Animate on Scroll
-
-    // Sample Chart.js code for an interactive chart in your Projects section
+    AOS.init();
     const ctx = document.getElementById('projectChart').getContext('2d');
     const projectChart = new Chart(ctx, {
       type: 'doughnut',
@@ -165,7 +176,5 @@
       }
     });
   </script>
-  <!-- Chart.js Library -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
