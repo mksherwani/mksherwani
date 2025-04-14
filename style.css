@@ -33,16 +33,18 @@ nav a {
 section {
   padding: 20px;
 }
-#publications .list-group-item {
-  background-color: #2c2c2c; /* Dark grey */
-  color: #f1f1f1; /* Light text for readability */
-  border: none;   /* Optional: remove borders for cleaner look */
+
+section#publications ul.list-group > li.list-group-item {
+  background-color: #2c2c2c !important;
+  color: #f1f1f1 !important;
+  border: none !important;
   transition: background-color 0.3s ease;
 }
 
-#publications .list-group-item:hover {
-  background-color: #3a3a3a; /* Slightly lighter on hover */
+section#publications ul.list-group > li.list-group-item:hover {
+  background-color: #3a3a3a !important;
 }
+
 
 /* Footer */
 footer {
