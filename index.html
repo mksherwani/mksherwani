@@ -13,9 +13,17 @@
   <link rel="stylesheet" href="style.css" />
   <style>
     header.hero-bg {
-      background: url('images/3.jpg') center center/cover no-repeat;
+      background: url('images/3.jpg') center center no-repeat;
+      background-size: cover;
+      background-attachment: fixed; /* Optional: for a parallax effect */
+      background-position: center;
       color: white;
       text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+      min-height: 100vh; /* Full viewport height */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
     }
     .card-clickable {
       cursor: pointer;
