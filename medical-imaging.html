@@ -1,0 +1,28 @@
+<section id="project-summary">
+  <h2>MR-to-CT Image Translation for Improved Radiotherapy Planning</h2>
+  <p>
+    In modern radiotherapy, achieving precision is everything. While Magnetic Resonance (MR) imaging offers outstanding contrast for accurately contouring tumors and organs at risk, it lacks the physical data required for precise radiation dose calculations. Computed Tomography (CT), on the other hand, is necessary for those calculations but struggles with soft tissue contrast. This gap inspired a growing field focused on generating synthetic CT (sCT) images directly from MR scans.
+  </p>
+
+  <p>
+    In this project, I applied my expertise in deep learning to develop and evaluate advanced methods for MR-to-CT translation, a process that could ultimately lead to MR-only radiotherapy workflows—eliminating the need for additional CT scans and reducing patients’ exposure to ionizing radiation.
+  </p>
+
+  <p>
+    My research, conducted using a dataset of 15 paired brain MR/CT volumes, explored how different loss functions influence the quality of sCT generation. I conducted a thorough comparison of three loss strategies: Mean Absolute Error (MAE), MAE combined with Structural Similarity Index (SSIM), and MAE combined with Perceptual Loss—two of which were adapted from the world of non-medical imaging.
+  </p>
+
+  <p>
+    The findings? MAE remains a solid baseline, especially for intensity and edge fidelity, but adding perceptual loss showed promising improvements in some cases. On the other hand, SSIM—despite its success in natural image tasks—underperformed in this medical context. These insights open exciting doors for further improvements, particularly by customizing perceptual loss functions using networks pre-trained on medical datasets.
+  </p>
+
+  <p>
+    This work not only highlights my hands-on experience with deep convolutional neural networks (DCNNs) and loss function engineering, but also my commitment to creating efficient, clinically viable solutions that advance personalized cancer care.
+  </p>
+
+  <p>
+    I'm currently working on scaling this study with a larger dataset and plan to experiment with more specialized architectures such as GANs—always with the goal of improving sCT quality and making radiotherapy safer and more accurate.
+  </p>
+
+  <p><strong>Technologies used:</strong> Python, PyTorch, DCNN, VGG16, U-Net, medical image registration (Plastimatch), and custom loss functions (MAE, SSIM, Perceptual Loss)</p>
+</section>
