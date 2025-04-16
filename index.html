@@ -16,19 +16,20 @@
   <!-- Custom styles -->
   <link rel="stylesheet" href="style.css" />
   <style>
-    header.hero-bg {
-      background: url('images/cover_image.png') center center no-repeat;
-      background-size: cover;
-      background-attachment: fixed; /* Optional: for a parallax effect */
-      background-position: center;
-      color: white;
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-      min-height: 100vh; /* Full viewport height */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
+      header.hero-bg {
+        background: url('images/cover_image.png') center top no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        color: white;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 80px; /* Match or slightly exceed navbar height */
+      }
+
     .card-clickable {
       cursor: pointer;
     }
