@@ -4,8 +4,83 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Revolutionizing Medical Imaging with Diffusion Models</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    /* (Same styles as template.html above) */
+    /* Reset & Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; }
+    a { color: #1f80e0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('https://images.unsplash.com/photo-1581093588401-7c75e36049c6?auto=format&fit=crop&w=1650&q=80')
+        center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: 3rem;
+      text-align: center;
+      max-width: 90%;
+      line-height: 1.2;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 800px;
+      margin: -4rem auto 2rem; /* pulls up over hero */
+      background: #fff;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    h2 {
+      margin-top: 1.5rem;
+      color: #1f80e0;
+      font-weight: 600;
+    }
+    p {
+      margin: 1rem 0;
+    }
+    ol, ul {
+      margin: 1rem 0 1rem 1.5rem;
+    }
+    .callout {
+      background: #e8f1ff;
+      border-left: 4px solid #1f80e0;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 1rem;
+      overflow-x: auto;
+      border-radius: 4px;
+    }
+    code {
+      background: #eef5ff;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: Menlo, monospace;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      color: #777;
+      font-size: 0.9rem;
+      margin: 3rem 0;
+    }
   </style>
 </head>
 <body>
@@ -17,52 +92,49 @@
 
   <!-- Main content -->
   <div class="container">
-    <p>Imagine a world where noisy, low‑dose CT scans become crystal clear. Where rapid MRI scans rival their slower, high‑resolution counterparts. That’s not science fiction—it’s happening right now thanks to diffusion models, a breakthrough in AI that’s poised to reshape medical imaging.</p>
+    <p>Imagine stepping into a radiology suite where your CT scans—and even your quick MRI snapshots—look as crisp as a high‑dose, lengthy scan. That’s the magic of diffusion models in medical imaging. These AI engines learn to “undo” noise, producing images so lifelike they’re transforming diagnostics right now.</p>
 
     <div class="callout">
       <strong>In this post:</strong>
       <ul>
-        <li>What diffusion models are</li>
-        <li>Why they beat older AI methods</li>
-        <li>Real‑world use cases you can try</li>
+        <li>Why diffusion models beat older AI methods</li>
+        <li>Three real‑world use cases you can try today</li>
+        <li>A hands‑on code snippet to get you started</li>
       </ul>
     </div>
 
-    <h2>Why Should You Care?</h2>
-    <p>Standard AI methods like GANs often struggle with stability—tiny tweaks can make them “hallucinate” unrealistic features. Diffusion models, by contrast, start from random noise and learn to clean it up step by step. The result? Images that look—and feel—more authentic, reducing diagnostic errors.</p>
+    <h2>Why You’ll Love Diffusion Models</h2>
+    <p>Traditional GANs (Generative Adversarial Networks) can be temperamental: they sometimes “hallucinate” features or collapse into repetitive outputs. Diffusion models, however, start from pure noise and learn to clean it up—step by step—giving you more stable, reliable results.</p>
 
-    <h2>How It Works, Simply</h2>
-    <p>Think of it as reversing a blur process:</p>
-    <ol>
-      <li><strong>Add noise:</strong> Gradually corrupt a clear image until it’s nearly random.</li>
-      <li><strong>Learn to denoise:</strong> Train the AI to undo each noise step.</li>
-      <li><strong>Generate:</strong> Start with random noise and run the denoiser backward to create a brand‑new image.</li>
-    </ol>
-
-    <h2>Top 3 Cool Applications</h2>
+    <h2>Three Game‑Changing Applications</h2>
     <h3>1. Low‑Dose CT Reconstruction</h3>
-    <p>Patients get less radiation, but doctors still see full‑detail images—no compromises.</p>
+    <p>Less radiation for patients, but with the same diagnostic clarity. AI-driven denoising bridges the gap, making low‑dose scans as useful as their high‑dose counterparts.</p>
 
-    <h3>2. MRI Speed‑Ups</h3>
-    <p>Scan time can drop by half, making MRI more patient‑friendly and lowering costs.</p>
+    <h3>2. Speedy MRIs</h3>
+    <p>Long MRI sessions can be uncomfortable and expensive. By upsampling quick, low‑res scans, diffusion models can slash scan times in half—while maintaining image quality.</p>
 
-    <h3>3. PET Denoising</h3>
-    <p>Sharper PET scans mean better tumor detection, even with minimal tracer doses.</p>
+    <h3>3. PET Scan Enhancement</h3>
+    <p>Positron emission tomography often suffers from noisy, grainy outputs. Diffusion‑based priors clean up those images, boosting lesion detectability without inventing false positives.</p>
 
     <h2>A Quick Code Teaser</h2>
     <pre><code>from diffusers import DDPMPipeline
 import torch
 
+# 1. Load a pretrained medical diffusion model
 pipe = DDPMPipeline.from_pretrained("facebook/ddpm-medical-ct")
+
+# 2. Generate a 256×256 CT slice from noise
 noise = torch.randn((1,1,256,256))
 with torch.no_grad():
-    slice = pipe(noise).images[0]
-slice.save("diffusion_ct.png")</code></pre>
+    image = pipe(noise).images[0]
+
+# 3. Save the result
+image.save("generated_ct.png")</code></pre>
 
     <h2>Looking Ahead</h2>
-    <p>From real‑time scans powered by specialized chips to federated models trained across hospitals, diffusion‑based imaging is just warming up. The next five years could see AI‑driven scanners that learn from every patient—and share insights securely, globally.</p>
+    <p>The future is bright: imagine federated diffusion models trained across hospitals—sharing knowledge without sharing data—or real‑time inference on specialized hardware. We’re only scratching the surface of what’s possible.</p>
 
-    <p>Ready to explore? Check out the <a href="https://huggingface.co/models?pipeline_tag=diffusion">Diffusers library</a> and start experimenting today.</p>
+    <p>Ready to experiment? Dive into the <a href="https://huggingface.co/models?pipeline_tag=diffusion">Diffusers library</a> and start your own diffusion adventure.</p>
   </div>
 
   <div class="footer">
