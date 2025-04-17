@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Blog Title Here</title>
+  <style>
+    /* Reset & Core */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; color:#333; line-height:1.6; }
+    a { color:#1a73e8; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width:100%;
+      height: 60vh;
+      background: 
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('HERO_IMAGE_URL') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero h1 {
+      color:#fff;
+      font-size:3rem;
+      text-align:center;
+      padding:0 1rem;
+    }
+
+    /* Content */
+    .container { max-width:800px; margin:2rem auto; padding:0 1rem; }
+    h2 { margin-top:2rem; color:#005a9e; }
+    p { margin:1rem 0; }
+    .callout {
+      background:#e8f0fe; border-left:4px solid #1a73e8;
+      padding:1rem; margin:1.5rem 0;
+    }
+    pre { background:#f4f4f4; padding:1rem; overflow-x:auto; }
+    code { background:#eef; padding:0.2rem 0.4rem; border-radius:4px; }
+
+    /* Footer */
+    .footer { text-align:center; color:#777; font-size:0.9rem; margin-top:3rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Hero with overlay title -->
+  <section class="hero">
+    <h1>BLOG_POST_TITLE</h1>
+  </section>
+
+  <!-- Main content -->
+  <div class="container">
+    BLOG_POST_CONTENT
+  </div>
+
+  <div class="footer">
+    © 2025 Your Name • Data/ML Scientist • <a href="https://yourwebsite.com">yourwebsite.com</a>
+  </div>
+
+</body>
+</html>
