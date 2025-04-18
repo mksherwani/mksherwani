@@ -204,17 +204,27 @@
 
       <!-- Blog Card 3 -->
       <div class="col-md-4 mb-4">
-        <div onclick="window.open('blog-3.html', '_blank')" style="cursor: pointer;">
-          <div class="mx-auto p-4" style="width: 100%; height: 350px; border-radius: 20px; background-color: #f8f9fa; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #000; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-            <img src="images/blog3.jpg" alt="Blog 3" style="width: 80px; height: 80px; margin-bottom: 15px;">
-            <h5 class="fw-bold mb-2">MRI to CT Synthesis</h5>
-            <p class="small text-center mb-0">Challenges and breakthroughs in cross-modality medical image generation using GANs.</p>
+        <div onclick="window.location.href = 'blogs/blog-2.html';" style="cursor: pointer;">
+          <div class="mx-auto" style="width: 100%; height: 350px; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.3); background-color: #fff; display: flex; flex-direction: column;">
+      
+            <!-- Image Section (Fixed height) -->
+            <div style="flex-shrink: 0; height: 55%; width: 100%; overflow: hidden;">
+              <img 
+                src="images/blogs/blog3.jpg" 
+                alt="Blog Image" 
+                style="width: 100%; height: 100%; object-fit: cover;"
+              />
+            </div>
+      
+            <!-- Text Section (Flexible height) -->
+            <div style="padding: 1rem; flex-grow: 1; text-align: center; background-color: #f8f9fa; color: #000;">
+              <h5 class="fw-bold mb-2">The Rise of AI: Transforming Everyday Life</h5>
+              <p class="small mb-0">From Sci-Fi to Sidekick — AI is Already Here.</p>
+            </div>
+      
           </div>
         </div>
       </div>
-
-    </div>
-  </div>
 </section>
 
 <!-- Publications Redirect -->
