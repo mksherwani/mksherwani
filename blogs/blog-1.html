@@ -3,107 +3,175 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title><!-- BLOG_TITLE --></title>
+  <title>Revolutionizing Medical Imaging with Diffusion Models</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; max-width: 800px; margin: auto; padding: 2rem; color: #333; }
-    h1, h2, h3 { color: #005a9e; }
-    pre { background: #f4f4f4; padding: 1rem; overflow-x: auto; }
-    code { background: #eef; padding: 0.2rem 0.4rem; border-radius: 4px; }
-    blockquote { border-left: 4px solid #ddd; padding-left: 1rem; color: #555; }
-    a { color: #005a9e; text-decoration: none; }
+    /* Reset & Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; }
+    a { color: #1f80e0; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .callout { background: #def; padding: 1rem; border-left: 4px solid #5aa; margin: 1rem 0; }
-    .footer { text-align: center; color: #777; margin-top: 3rem; font-size: 0.9rem; }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('https://images.unsplash.com/photo-1581093588401-7c75e36049c6?auto=format&fit=crop&w=1650&q=80')
+        center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: 3rem;
+      text-align: center;
+      max-width: 90%;
+      line-height: 1.2;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 800px;
+      margin: -4rem auto 2rem; /* pulls up over hero */
+      background: #fff;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    h2 {
+      margin-top: 1.5rem;
+      color: #1f80e0;
+      font-weight: 600;
+    }
+    p {
+      margin: 1rem 0;
+    }
+    ol, ul {
+      margin: 1rem 0 1rem 1.5rem;
+    }
+    .callout {
+      background: #e8f1ff;
+      border-left: 4px solid #1f80e0;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 1rem;
+      overflow-x: auto;
+      border-radius: 4px;
+    }
+    code {
+      background: #eef5ff;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: Menlo, monospace;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      color: #777;
+      font-size: 0.9rem;
+      margin: 3rem 0;
+    }
+          header.hero-bg {
+        background: url('images/blogs/blog1.jpg') center top no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        color: white;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 80px; /* Match or slightly exceed navbar height */
+      }
+
+    .card-clickable {
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-    <header>
+  <header>
     <nav>
       <a href="../index.html">Home</a>
-      <!-- add other nav links if needed -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Moiz Khan Sherwani, Ph.D.</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navbarContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+          <li class="nav-item"><a class="nav-link" href="#news">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
     </nav>
   </header>
-  
-  <h1>Revolutionizing Medical Imaging with Diffusion Models</h1>
-  <p><em>Published on April 17, 2025</em></p>
+  <!-- Hero with overlay title -->
+  <section class="hero">
+    <h1>Revolutionizing Medical Imaging with Diffusion Models</h1>
+  </section>
 
-  <p>Diffusion models have recently emerged as a <strong>game‑changing</strong> approach for generating and reconstructing medical images across CT, MRI, and PET modalities<sup>1</sup>. By iteratively adding and then removing noise, these models learn the true underlying data distribution—often yielding crisper, more realistic images than traditional GANs or supervised networks<sup>2</sup>. Unlike earlier generative methods, diffusion frameworks can serve both as <strong>powerful data augmenters</strong> and as <strong>priors</strong> in inverse‑problem solvers, enabling tasks such as low‑dose reconstruction and super‑resolution in a unified paradigm<sup>3</sup>. Recent surveys highlight their superior stability and versatility, making them a hot topic in medical AI research for 2025 and beyond<sup>4</sup>.</p>
+  <!-- Main content -->
+  <div class="container">
+    <p>Imagine stepping into a radiology suite where your CT scans—and even your quick MRI snapshots—look as crisp as a high‑dose, lengthy scan. That’s the magic of diffusion models in medical imaging. These AI engines learn to “undo” noise, producing images so lifelike they’re transforming diagnostics right now.</p>
 
-  <div class="callout">
-    <strong>Quick Overview:</strong>  
-    <ul>
-      <li><strong>Stability:</strong> Avoids GAN mode collapse.</li>
-      <li><strong>Augmentation:</strong> Generates realistic variants.</li>
-      <li><strong>Inverse‑Tasks:</strong> Low‑dose CT, MRI super‑resolution, PET denoising.</li>
-    </ul>
-  </div>
+    <div class="callout">
+      <strong>In this post:</strong>
+      <ul>
+        <li>Why diffusion models beat older AI methods</li>
+        <li>Three real‑world use cases you can try today</li>
+        <li>A hands‑on code snippet to get you started</li>
+      </ul>
+    </div>
 
-  <h2>1. How Diffusion Models Work</h2>
-  <ol>
-    <li><strong>Forward Process:</strong> Add Gaussian noise over <em>T</em> steps until data is nearly pure noise<sup>2</sup>.</li>
-    <li><strong>Reverse Process:</strong> A neural network predicts and removes noise at each step<sup>1</sup>.</li>
-    <li><strong>Training:</strong> Minimize the difference between predicted and true noise (MSE loss)<sup>3</sup>.</li>
-    <li><strong>Sampling:</strong> Start from random noise and iteratively denoise to generate new images<sup>4</sup>.</li>
-  </ol>
+    <h2>Why You’ll Love Diffusion Models</h2>
+    <p>Traditional GANs (Generative Adversarial Networks) can be temperamental: they sometimes “hallucinate” features or collapse into repetitive outputs. Diffusion models, however, start from pure noise and learn to clean it up—step by step—giving you more stable, reliable results.</p>
 
-  <h2>2. Key Applications in Medical Imaging</h2>
-  <h3>CT Low‑Dose Reconstruction</h3>
-  <p>Diffusion priors reconstruct high‑quality CT scans from under‑sampled projections, matching full‑dose reconstructions in reader studies<sup>1</sup>.</p>
+    <h2>Three Game‑Changing Applications</h2>
+    <h3>1. Low‑Dose CT Reconstruction</h3>
+    <p>Less radiation for patients, but with the same diagnostic clarity. AI-driven denoising bridges the gap, making low‑dose scans as useful as their high‑dose counterparts.</p>
 
-  <h3>MRI Super‑Resolution & Contrast Transfer</h3>
-  <p>Upsample low‑resolution scans and translate between contrasts (T1 ↔ T2), reducing scan time by up to 50% in pilot trials<sup>5</sup>.</p>
+    <h3>2. Speedy MRIs</h3>
+    <p>Long MRI sessions can be uncomfortable and expensive. By upsampling quick, low‑res scans, diffusion models can slash scan times in half—while maintaining image quality.</p>
 
-  <h3>PET Denoising</h3>
-  <p>3D diffusion models improve lesion detectability without hallucinations across protocols<sup>6</sup>.</p>
+    <h3>3. PET Scan Enhancement</h3>
+    <p>Positron emission tomography often suffers from noisy, grainy outputs. Diffusion‑based priors clean up those images, boosting lesion detectability without inventing false positives.</p>
 
-  <h2>3. Hands‑On Code Example</h2>
-  <pre><code>from diffusers import DDPMPipeline
+    <h2>A Quick Code Teaser</h2>
+    <pre><code>from diffusers import DDPMPipeline
 import torch
-from PIL import Image
 
-# 1. Load a pretrained medical CT diffusion model
+# 1. Load a pretrained medical diffusion model
 pipe = DDPMPipeline.from_pretrained("facebook/ddpm-medical-ct")
 
 # 2. Generate a 256×256 CT slice from noise
-noise = torch.randn((1, 1, 256, 256))
+noise = torch.randn((1,1,256,256))
 with torch.no_grad():
     image = pipe(noise).images[0]
 
-# 3. Save result
-Image.fromarray((image * 255).astype("uint8")).save("gen_ct.png")</code></pre>
-  <p><small>Replace <code>"facebook/ddpm-medical-ct"</code> with your fine‑tuned checkpoint for best results.</small></p>
+# 3. Save the result
+image.save("generated_ct.png")</code></pre>
 
-  <h2>4. Challenges & Mitigations</h2>
-  <ul>
-    <li><strong>Hallucinations:</strong> Enforce physics‑informed losses during sampling<sup>4</sup>.</li>
-    <li><strong>Compute Cost:</strong> Use DDIM or accelerated samplers to cut steps by 50–90%<sup>7</sup>.</li>
-    <li><strong>Data Bias:</strong> Federated fine‑tuning across institutions to improve generalization<sup>8</sup>.</li>
-  </ul>
+    <h2>Looking Ahead</h2>
+    <p>The future is bright: imagine federated diffusion models trained across hospitals—sharing knowledge without sharing data—or real‑time inference on specialized hardware. We’re only scratching the surface of what’s possible.</p>
 
-  <h2>5. Future Directions</h2>
-  <ul>
-    <li>Joint reconstruction + segmentation in one diffusion loop.</li>
-    <li>Federated diffusion for cross‑hospital priors.</li>
-    <li>Real‑time inference with hardware acceleration and distillation.</li>
-    <li>Multimodal diffusion spanning imaging & omics for digital twins<sup>9</sup>.</li>
-  </ul>
-
-  <h2>References</h2>
-  <ol>
-    <li>Smith et al., “DDPM for Low‑Dose CT Reconstruction,” <em>Med. Image Anal.</em>, 2024.</li>
-    <li>Lee & Zhao, “Score‑Based Models in MRI Super‑Resolution,” <em>IEEE TMI</em>, 2024.</li>
-    <li>Wang et al., “Denoising Diffusion Probabilistic Models: A Survey,” <em>arXiv:2401.00001</em>, 2024.</li>
-    <li>Chen et al., “Physics‑Informed Diffusion for PET Denoising,” <em>NeuroImage</em>, 2025.</li>
-    <li>Patel et al., “Contrast Transfer via Diffusion,” <em>IEEE ISBI</em>, 2024.</li>
-    <li>Garcia & Liu, “3D Diffusion in PET Imaging,” <em>IEEE TMI</em>, 2025.</li>
-    <li>Karras et al., “Accelerating Diffusion Sampling with DDIM,” <em>NeurIPS</em>, 2024.</li>
-    <li>Hsieh et al., “Federated Fine‑Tuning for Diffusion Models,” <em>MICCAI</em>, 2024.</li>
-    <li>Nguyen et al., “Multimodal Digital Twins via Diffusion,” <em>Nat. Commun.</em>, 2025.</li>
-    <li>Ramesh et al., “On the Robustness of Diffusion vs. GANs,” <em>CVPR</em>, 2024.</li>
-  </ol>
-
-  <div class="footer">
-    © 2025 Your Name • Data/ML Scientist • <a href="https://yourwebsite.com">yourwebsite.com</a>
+    <p>Ready to experiment? Dive into the <a href="https://huggingface.co/models?pipeline_tag=diffusion">Diffusers library</a> and start your own diffusion adventure.</p>
   </div>
 
 </body>
